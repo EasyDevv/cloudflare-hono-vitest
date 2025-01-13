@@ -4,7 +4,14 @@ import { Hono } from 'hono'
 const app = new Hono<{ Bindings: Env }>();
 
 app.get('/', (c) => {
-	return c.json({ hello: 'world', var: c.env.MY_VARIABLE, secret: c.env.MY_SECRET })
+	return c.json({
+		hello: 'world',
+		var: c.env.MY_VARIABLE,
+		// If you want to use a local secret, 
+		// Create .dev.vars file with MY_SECRET=your_secret
+
+		// secret: c.env.MY_SECRET
+	})
 })
 
 export default app

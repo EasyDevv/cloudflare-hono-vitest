@@ -10,7 +10,7 @@ describe('Test the application', () => {
 		expect(await res.json()).toEqual({
 			hello: 'world',
 			var: 'your_variable',
-			secret: 'your_secret',
+			// secret: 'your_secret',
 		})
 	})
 
