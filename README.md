@@ -108,10 +108,18 @@ You will be prompted to enter the value for `MY_SECRET`.
 Run the following command to deploy your Hono application to Cloudflare Workers:
 
 ```bash
-bun deploy
+bun run deploy
 ```
 
 This will deploy your application to Cloudflare's edge network, making it accessible globally.
+
+`https://my=project.my-name.workers.dev`
+
+**my-project** is the name of your project, **my-name** is the name of your project.
+
+And you can see it in your dashboard.
+
+- [Cloudflare Dashboard](https://dash.cloudflare.com/)
 
 ## Conclusion
 
