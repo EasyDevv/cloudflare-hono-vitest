@@ -1,7 +1,7 @@
 #:schema node_modules/wrangler/config-schema.json
 name = "cloudflare-hono-vitest"
 main = "src/index.ts"
-compatibility_date = "2025-01-09"
+compatibility_date = "2024-12-30"
 
 # Workers Logs
 # Docs: https://developers.cloudflare.com/workers/observability/logs/workers-logs/

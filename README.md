@@ -113,7 +113,7 @@ bun run deploy
 
 This will deploy your application to Cloudflare's edge network, making it accessible globally.
 
-`https://my=project.my-name.workers.dev`
+`https://my-project.my-name.workers.dev`
 
 **my-project** is the name of your project, **my-name** is the name of your project.
 
