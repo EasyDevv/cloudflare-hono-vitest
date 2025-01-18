@@ -1,12 +1,26 @@
 # Cloudflare Workers Hono Vitest Template
 
-This project demonstrates a simple Hono application deployed on Cloudflare Workers, along with tests written using Vitest. The application exposes a single endpoint that returns a JSON response containing environment variables. Environment variables, including secrets, are managed using a `.dev.vars` file for local development.
+<h3 align="center">Quickly build and test Hono apps on Cloudflare Workers with ease.</h3>
+
+<p align="center">
+    <img
+    src="https://go-skill-icons.vercel.app/api/icons?i=cloudflare,hono,vite,bun"
+    />
+</p>
+
+<p align="center">
+    <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
+    <a href="./README_KR.md"><img alt="README in Korean" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
+</p>
+
+This template showcases a streamlined Hono app running on Cloudflare Workers, tested with Vitest. It features a single endpoint that outputs environment variables as JSON, with secrets and variables managed via `.dev.vars` for local development.
 
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - [Bun](https://bun.sh/)
+- [Cloudflare Account](https://dash.cloudflare.com/)
 
 ## Project Structure
 
@@ -54,7 +68,7 @@ These variables will be accessible in your Hono application via `c.env`.
 To run the application locally using Wrangler:
 
 ```bash
-bun dev
+bun run dev # or bun dev
 ```
 
 This will start the Cloudflare Workers development server, and you can access the application at `http://localhost:8787`.
