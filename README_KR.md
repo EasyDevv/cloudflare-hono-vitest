@@ -13,7 +13,7 @@
     <a href="./README_KR.md"><img alt="README in Korean" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
 </p>
 
-이 템플릿은 Cloudflare Workers에서 실행되는 Hono 앱을 Vitest로 테스트하는 예제입니다. 환경 변수를 JSON으로 출력하는 엔드포인트 예시 코드가 포함되며, 로컬 개발을 위해 `.dev.vars`를 통해 비밀 및 변수를 관리합니다.
+이 템플릿은 Cloudflare Workers에서 실행되는 Hono 앱을 Vitest로 테스트하는 예제입니다. 환경 변수를 JSON으로 출력하는 간단한 예시 코드가 포함되며, 로컬 개발을 위한 중요 API 키 관리법을 알 수 있습니다.
 
 ## 사전 요구 사항
 
@@ -33,10 +33,12 @@
 
 ### 1. 새 프로젝트 생성:
 
-my-project는 프로젝트 이름입니다. 자신의 프로젝트 이름으로 변경할 수 있습니다.
+my-project를 원하는 프로젝트 이름으로 변경할 수 있습니다.
+입력하지 않으면 cloudflare-hono-vitest로 생성됩니다.
 
 ```bash
 bun create easydevv/cloudflare-hono-vitest my-project
+# bun create `템플릿` `프로젝트명`
 ```
 
 ### 2. `wrangler.toml` 설정:
@@ -61,7 +63,7 @@ MY_VARIABLE = "your_variable"
 MY_SECRET="your_secret"
 ```
 
-이 변수들은 Hono 애플리케이션에서 `c.env`를 통해 접근할 수 있습니다.
+이 변수들은 Hono 애플리케이션에서 `c.env`를 통해 사용할 수 있습니다.
 
 ## 애플리케이션 실행
 

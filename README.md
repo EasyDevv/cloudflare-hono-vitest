@@ -1,6 +1,6 @@
 # Cloudflare Workers Hono Vitest Template
 
-<h3 align="center">Quickly build and test Hono apps on Cloudflare Workers with ease.</h3>
+<h3 align="center">Build and Test Serverless Apps Quickly.</h3>
 
 <p align="center">
     <img
@@ -10,38 +10,39 @@
 
 <p align="center">
     <a href="./README.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
-    <a href="./README_KR.md"><img alt="README in Korean" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
+    <a href="./README_KR.md"><img alt="README in Korean" src="https://img.shields.io/badge/Korean-d9d9d9"></a>
 </p>
 
-This template showcases a streamlined Hono app running on Cloudflare Workers, tested with Vitest. It features a single endpoint that outputs environment variables as JSON, with secrets and variables managed via `.dev.vars` for local development.
+This template provides an example of testing a Hono app running on Cloudflare Workers using Vitest. It includes a simple example code that outputs environment variables as JSON, and demonstrates how to manage important API keys for local development.
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed:
+Before getting started, ensure you have the following:
 
 - [Bun](https://bun.sh/)
 - [Cloudflare Account](https://dash.cloudflare.com/)
 
 ## Project Structure
 
-- `src/index.ts`: The main Hono application file.
-- `test/index.test.ts`: Vitest test cases for the application.
-- `.dev.vars`: File for defining environment variables and secrets for local development.
-- `wrangler.toml`: Configuration file for Cloudflare Workers (not shown in the code, but assumed to be present).
+- `src/index.ts`: Main Hono file.
+- `test/index.test.ts`: Vitest test cases.
+- `.dev.vars`: File to define environment variables and secrets for local development.
+- `wrangler.toml`: Cloudflare Workers configuration file.
 
 ## Setup
 
-### 1. Create a new project:
+### 1. Create a New Project:
 
-my-project is the name of the project. You can replace it with your own project name.
+Replace `my-project` with your desired project name. If not provided, the project will be named `cloudflare-hono-vitest`.
 
 ```bash
 bun create easydevv/cloudflare-hono-vitest my-project
+# bun create `template` `project-name`
 ```
 
 ### 2. Configure `wrangler.toml`:
 
-Ensure your `wrangler.toml` file is properly configured for deployment. For example:
+Here’s an example configuration for `wrangler.toml`:
 
 ```toml
 name = "my-project"
@@ -51,9 +52,9 @@ main = "src/index.ts"
 MY_VARIABLE = "your_variable"
 ```
 
-### 3. Configure environment variables (Optional):
+### 3. Set Up Environment Variables (Optional):
 
-Create a `.dev.vars` file in the root of your project to define environment variables and secrets for local development. This file is automatically loaded by Wrangler when running the application locally.
+Create a `.dev.vars` file in the project root. This file is automatically loaded by Wrangler when running the application locally.
 
 Example `.dev.vars`:
 
@@ -61,7 +62,7 @@ Example `.dev.vars`:
 MY_SECRET="your_secret"
 ```
 
-These variables will be accessible in your Hono application via `c.env`.
+These variables can be accessed in the Hono application via `c.env`.
 
 ## Running the Application
 
@@ -71,13 +72,11 @@ To run the application locally using Wrangler:
 bun run dev # or bun dev
 ```
 
-This will start the Cloudflare Workers development server, and you can access the application at `http://localhost:8787`.
+This command starts a local server accessible at `http://localhost:8787`.
 
 ## Running Tests
 
-Tests are written using Vitest and can be run using Bun or npm.
-
-To run the tests using Bun:
+To run tests using Bun:
 
 ```bash
 bun run test
@@ -89,25 +88,9 @@ Alternatively, using bunx:
 bunx vitest
 ```
 
-### Test Cases
+## Production Setup
 
-#### 1. Should return 200 response:
-
-This test checks if the root endpoint (`/`) returns a 200 status code and the expected JSON response containing the environment variables.
-
-#### 2. Should return 404 for unknown routes:
-
-This test ensures that the application returns a 404 status code for routes that do not exist.
-
-#### 3. Should handle errors:
-
-This test is currently commented out but can be used to test error handling in the application.
-
-## Deployment
-
-To deploy the application to Cloudflare Workers:
-
-#### 1. Set secrets in Cloudflare Workers:
+#### 1. Set Up SECRET in Cloudflare Workers:
 
 Use the Wrangler CLI to set secrets for your application:
 
@@ -115,29 +98,21 @@ Use the Wrangler CLI to set secrets for your application:
 wrangler secret put MY_SECRET
 ```
 
-You will be prompted to enter the value for `MY_SECRET`.
+You will be prompted to enter the value for `MY_SECRET`. Input your API key or other sensitive data.
 
-#### 2. Deploy the application:
+#### 2. Deploy the Application:
 
-Run the following command to deploy your Hono application to Cloudflare Workers:
+Deploy the Hono application to Cloudflare Workers using the following command:
 
 ```bash
 bun run deploy
 ```
 
-This will deploy your application to Cloudflare's edge network, making it accessible globally.
-
-`https://my-project.my-name.workers.dev`
-
-**my-project** is the name of your project, **my-name** is the name of your project.
-
-And you can see it in your dashboard.
+After deployment, you can monitor it in the Cloudflare dashboard:
 
 - [Cloudflare Dashboard](https://dash.cloudflare.com/)
 
 ## Conclusion
-
-This project provides a basic setup for building and testing a Hono application on Cloudflare Workers. It demonstrates how to use environment variables and secrets, write tests with Vitest, and deploy the application using Wrangler. You can extend this setup to build more complex applications and add additional test cases as needed.
 
 For more information on Hono, Cloudflare Workers, and Vitest, refer to their official documentation:
 
